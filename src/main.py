@@ -79,7 +79,7 @@ subject = st.selectbox("📚 Select Subject",  ['String Manipulation', 'Numpy',
                                               'Web Scraping'])
 
 # Model setup
-model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key='AIzaSyBHRdlVLauaSGnWWgoMe0Vt-PKg8PSzUVU')
+model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key='AIzaSyAz8LnC2MMharCSKIi9cgZPH9JySY0G8e0')
 
 # Pydantic schema for question generation
 class pytem(BaseModel):
