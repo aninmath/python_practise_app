@@ -173,10 +173,20 @@ if st.button('✅ Check Answer'):
             st.markdown("### 📊 Efficiency Score")
             st.metric(label="Efficiency", value=f"{result2.Efficiency}%")
 
+        
+        # Add a session state variable to track if the user clicked "check code"
+        if 'show_correct_code' not in st.session_state:
+            st.session_state.show_correct_code = False
+        # Show "check code" button only if the verdict is wrong and code is available
         if result2.Verdict == 'Wrong' and result2.Code:
-            if st.button('check code'):
-                st.markdown("### Find corrected Code")
-                st.code(result2.Code, language='python')
+            if st.button('🛠️ Check Code'):
+                st.session_state.show_correct_code = True
+
+        # Display the corrected code if the button was clicked
+        if st.session_state.show_correct_code and result2.Code:
+            st.markdown("### 🧰 Corrected Code")
+            st.code(result2.Code, language='python')
+
 
         if result2.Verdict == 'Correct' and result2.Code:
             st.markdown("### 💡 Suggested Better Code")
