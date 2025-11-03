@@ -15,7 +15,4 @@ python-dotenv
 numpy
 scikit-learn
 streamlit
-<<<<<<< HEAD
-=======
 pydantic
->>>>>>> 97b268d (requirement changed)
