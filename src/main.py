@@ -16,7 +16,7 @@ QUESTION_FILE = "saved_question.json"
 
 # Page config
 st.set_page_config(
-    page_title="🐍 Python Practice App",
+    page_title="Python Practice App",
     page_icon="📘",
     layout="centered"
 )

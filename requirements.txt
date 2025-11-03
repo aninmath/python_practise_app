@@ -1,6 +1,21 @@
-streamlit>=1.28.0
-python-dotenv>=1.0.0
-langchain>=0.1.16
-langchain-core>=0.1.45
-langchain-google-genai>=0.0.10
-pydantic>=2.5.0
+# LangChain Core
+langchain
+langchain-core
+
+
+# Google Gemini (PaLM) Integration
+langchain-google-genai
+google-generativeai
+
+
+# Environment Variable Management
+python-dotenv
+
+# Machine Learning Utilities
+numpy
+scikit-learn
+streamlit
+<<<<<<< HEAD
+=======
+pydantic
+>>>>>>> 97b268d (requirement changed)
