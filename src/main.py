@@ -137,7 +137,7 @@ answer = st.text_area("Write your Python code here", height=200)
 class pytem2(BaseModel):
     Verdict: Literal["Correct", "Wrong"] = Field(description="Mention the correctness of the code")
     Efficiency: int = Field(description="Give an efficiency score out of 100 measured against the most efficient code")
-    Code: Optional[str] = Field(description="write the correct code for the question")
+    Code: Optional[str] = Field(description="write the correct code for the question with highest efficiency")
     Why : Optional[str] = Field(description="Describe why the verdict is wrong in very SHORT and CRISP way, and only provide this if the verdict is wrong")
 
 parser_py2 = PydanticOutputParser(pydantic_object=pytem2)
