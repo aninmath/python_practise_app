@@ -9,7 +9,7 @@ import json
 import os
 
 # Load environment variables
-# load_dotenv()
+load_dotenv()
 
 # File path for saving question
 QUESTION_FILE = "saved_question.json"
@@ -79,7 +79,8 @@ subject = st.selectbox("📚 Select Subject",  ['String Manipulation', 'Numpy',
                                               'Web Scraping'])
 
 # Model setup
-model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key='AIzaSyAz8LnC2MMharCSKIi9cgZPH9JySY0G8e0')
+api_key = os.getenv("GOOGLE_API_KEY")
+model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key= api_key)
 
 # Pydantic schema for question generation
 class pytem(BaseModel):
