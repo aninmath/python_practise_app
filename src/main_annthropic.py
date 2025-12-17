@@ -1,6 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
@@ -129,8 +129,10 @@ subtopic = st.selectbox("📚 Select Subtopic", topics[topic])
 snippet_required = st.selectbox("🎯 Whether you need snippet", ['Needed', 'Not needed'],index=1)
 
 # Model setup
-api_key = os.getenv("GOOGLE_API_KEY")
-model = ChatGoogleGenerativeAI(model='gemini-2.5-flash', api_key= "AIzaSyDLaJu6yhSNCEnwxQA_BIPUUf8bUOck44E")
+api_key = os.getenv("ANTHROPIC_API_KEY")
+
+
+model = ChatAnthropic(model="claude-3-haiku-20240307", api_key=os.getenv("ANTHROPIC_API_KEY"), temperature=0.7)
 
 # Pydantic schema for question generation
 class pytem(BaseModel):
